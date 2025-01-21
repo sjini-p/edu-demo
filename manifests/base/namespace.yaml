@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: k8s-edu-user
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: k8s-edu-goods
