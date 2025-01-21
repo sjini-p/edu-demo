@@ -8,7 +8,7 @@ spec:
     - host: "edu-user.211.254.214.132.sslip.io"
       http:
         paths:
-          - path: /
+          - path: /project1
             pathType: Prefix
             backend:
               service:
