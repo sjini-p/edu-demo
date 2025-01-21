@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: k8s-edu-user-app
-  replicas: 4
+  replicas: 2
   template:
     metadata:
       labels:
