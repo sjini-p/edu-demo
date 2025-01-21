@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: k8s-edu-user-app
-          image: sjin2pio/k8s-edu:v0.0.1      # dockerhub image repository : repo/image명:Tag
+          image: sjin2pio/k8s-edu:v0.0.2      # dockerhub image repository : repo/image명:Tag
           imagePullPolicy: IfNotPresent        # k8s 클러스터에 다운로드 된 이미지 없으면 다운 or Always
           ports:
             - name: http
@@ -51,7 +51,7 @@ spec:
     spec:
       containers:
         - name: k8s-edu-goods-app
-          image: sjin2pio/k8s-edu:v0.0.1      # dockerhub image repository : repo/image명:Tag
+          image: sjin2pio/k8s-edu:v0.0.2      # dockerhub image repository : repo/image명:Tag
           imagePullPolicy: IfNotPresent        # k8s 클러스터에 다운로드 된 이미지 없으면 다운 or Always
           ports:
             - name: http
