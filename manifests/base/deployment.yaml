@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: k8s-edu-user-deployment
+  namespace: k8s-edu-user
 spec:
   selector:
     matchLabels:
@@ -38,6 +39,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: k8s-edu-goods-deployment
+  namespace: k8s-edu-goods
 spec:
   selector:
     matchLabels:
