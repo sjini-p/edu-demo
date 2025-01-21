@@ -17,7 +17,7 @@ metadata:
   name: k8s-edu-goods-service
 spec:
   selector:
-    app: k8s-edu-user-app
+    app: k8s-edu-goods-app
     version: blue  # 기본적으로 Blue 배포에 연결
   ports:
     - protocol: TCP
