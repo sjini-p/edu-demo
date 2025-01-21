@@ -40,3 +40,4 @@ out/
 /logs/
 
 /attacheFiles/
+.DS_Store
