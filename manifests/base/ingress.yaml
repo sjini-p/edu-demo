@@ -8,7 +8,17 @@ spec:
     - host: "edu-user.211.254.214.132.sslip.io"
       http:
         paths:
-          - path: /project1/
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: k8s-edu-user-service
+                port:
+                  number: 80
+    - host: "edu-goods.211.254.214.132.sslip.io"
+      http:
+        paths:
+          - path: /
             pathType: Prefix
             backend:
               service:
