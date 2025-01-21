@@ -22,6 +22,14 @@ spec:
             - name: http
               containerPort: 8080              # demo.jar 실행 포트
               protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 30          # livenessProbe 체크 초기 지연
+            periodSeconds: 10               # liveness probe 체크 주기
+            timeoutSeconds: 1              # liveness probe 실패시 pod restart
+            failureThreshold: 3             # liveness probe 실패시 pod restart 횟수
           resources:                           # pod 사용 리소스 설정 블록
             requests:                          # 생성시 필요한 최소 리소스
               cpu: "1"
@@ -59,6 +67,14 @@ spec:
             - name: http
               containerPort: 8080              # demo.jar 실행 포트
               protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 30          # livenessProbe 체크 초기 지연
+            periodSeconds: 10               # liveness probe 체크 주기
+            timeoutSeconds: 1              # liveness probe 실패시 pod restart
+            failureThreshold: 3             # liveness probe 실패시 pod restart 횟수
           resources:                           # pod 사용 리소스 설정 블록
             requests:                          # 생성시 필요한 최소 리소스
               cpu: "1"
