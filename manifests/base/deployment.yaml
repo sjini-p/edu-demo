@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: k8s-edu-deployment
-  namespace: default
 spec:
   selector:
     matchLabels:
@@ -16,7 +15,7 @@ spec:
     spec:
       containers:
         - name: k8s-edu-app
-          image: ydcho0902/k8s-edu:v0.0.1      # dockerhub image repository : repo/image명:Tag
+          image: sjin2pio/k8s-edu:v0.0.1      # dockerhub image repository : repo/image명:Tag
           imagePullPolicy: IfNotPresent        # k8s 클러스터에 다운로드 된 이미지 없으면 다운 or Always
           ports:
             - name: http
@@ -24,22 +23,14 @@ spec:
               protocol: TCP
           resources:                           # pod 사용 리소스 설정 블록
             requests:                          # 생성시 필요한 최소 리소스
-              cpu: "300m"
-              memory: "500Mi"
+              cpu: "1"
+              memory: "2Gi"
             limits:                            # pod가 사용 가능한 최대 리소스
-              cpu: "300m"
-              memory: "500Mi"
-          volumeMounts:
-            - name: application-properties
-              mountPath: /app/config
-              readOnly: true
-      volumes:
-        - name: application-properties
-          configMap:
-            name: "k8s-edu-user-configmap"
-            items:
-              - key: application.yml
-                path: application.yml
+              cpu: "1"
+              memory: "2Gi"
+          env:                                 # pod 내 환경 변수 설정
+            - name: SPRING_PROFILES_ACTIVE     # spring profile 설정
+              value: prod                      # 상용(prod) 환경
       imagePullSecrets:                        # dockerhub 이미지 pull 위한 secret
         - name: k8s-edu-dockerhub-secret
       nodeSelector:                            # pod가 실행 될 node 설정
