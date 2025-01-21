@@ -20,7 +20,7 @@ public class UserService {
 
     String appRunType;
 
-    public UserService(@Value("${app.run.type}") String appRunType) {
+    public UserService(@Value("${app.run.type:local}") String appRunType) {
         this.appRunType = appRunType;
     }
 
